@@ -1,346 +1,87 @@
 ---
 import Layout from '../layouts/Layout.astro';
-
 const projects = [
-  {
-    number: '01',
-    title: 'AI Research Assistant',
-    type: 'Agentic AI',
-    description: 'An evidence-led research agent that discovers sources, evaluates them, and produces concise summaries with citations.',
-    stack: ['Python', 'FastAPI', 'Ollama', 'Gemini'],
-    href: 'https://github.com/AmmarBinYasir489/ai-research-assistant',
-  },
-  {
-    number: '02',
-    title: 'Nourish AI',
-    type: 'Multimodal product',
-    description: 'A nutrition companion that understands meal images, tracks food, and turns repeat meals into reusable templates.',
-    stack: ['Next.js', 'Supabase', 'Gemini Vision'],
-    href: 'https://github.com/AmmarBinYasir489/calories-counter',
-  },
-  {
-    number: '03',
-    title: 'Expense AI',
-    type: 'Full-stack AI',
-    description: 'A personal finance platform for natural-language expense capture, useful analytics, and conversational insights.',
-    stack: ['Next.js', 'TypeScript', 'Supabase'],
-    href: 'https://github.com/AmmarBinYasir489/expense-ai',
-  },
-  {
-    number: '04',
-    title: 'Grounded Workspace',
-    type: 'Knowledge system',
-    description: 'A private document workspace for asking questions across internal knowledge with grounded, source-aware responses.',
-    stack: ['TypeScript', 'RAG', 'AI Search'],
-    href: 'https://github.com/AmmarBinYasir489/grounded-knowledge-workspace',
-  },
+  ['01','AI Research Assistant','Agentic research that discovers sources, evaluates evidence, and produces cited summaries.','Python · FastAPI · Ollama · Gemini','SOURCE → EVALUATE → SYNTHESIZE','https://github.com/AmmarBinYasir489/ai-research-assistant','RESEARCH AGENT','/projects/research-assistant.png'],
+  ['02','Nourish AI','A multimodal nutrition companion that understands meal images and creates reusable food templates.','Next.js · Supabase · Gemini Vision','VISION → ANALYZE → TRACK','https://github.com/AmmarBinYasir489/calories-counter','MULTIMODAL PRODUCT','/projects/nourish-ai.png'],
+  ['03','Expense AI','Natural-language expense capture, financial analytics, and conversational insight in one product.','Next.js · TypeScript · Supabase','CAPTURE → CLASSIFY → INSIGHT','https://github.com/AmmarBinYasir489/expense-ai','FINANCE PLATFORM','/projects/expense-ai.png'],
+  ['04','Grounded Workspace','A private document environment for source-aware answers across internal knowledge.','TypeScript · RAG · AI Search','INGEST → RETRIEVE → ANSWER','https://github.com/AmmarBinYasir489/grounded-knowledge-workspace','KNOWLEDGE SYSTEM','/projects/grounded-workspace.png'],
+  ['05','Recruiter Portal','A recruiter-facing hiring workspace for managing openings, reviewing resumes, tracking applicants, comparing candidates, and monitoring pipeline performance.','Full-Stack · Role-Based UI · Hiring Analytics','POST → REVIEW → SHORTLIST → HIRE','','RECRUITMENT PLATFORM','/projects/recruiter-portal.png'],
 ];
-
-const capabilities = [
-  {
-    index: 'A',
-    title: 'AI agents & automation',
-    copy: 'Goal-driven agents, n8n workflows, chatbots, support automation, lead routing, and connected business processes.',
-    tools: 'OpenAI / Gemini / n8n / APIs',
-  },
-  {
-    index: 'B',
-    title: 'AI product engineering',
-    copy: 'Production-ready LLM applications, RAG systems, document intelligence, multimodal tools, and private knowledge assistants.',
-    tools: 'Python / FastAPI / RAG / Supabase',
-  },
-  {
-    index: 'C',
-    title: 'Web & digital growth',
-    copy: 'Fast, responsive web experiences, custom dashboards, WordPress builds, technical SEO, and practical API integrations.',
-    tools: 'Next.js / React / WordPress / SEO',
-  },
-];
-
-const stack = [
-  ['AI', 'OpenAI, Gemini, Ollama, LLMs, RAG, multimodal AI'],
-  ['Automation', 'n8n, workflow design, webhooks, REST APIs, CRM flows'],
-  ['Frontend', 'Next.js, React, TypeScript, Tailwind CSS, Astro'],
-  ['Backend', 'Python, FastAPI, Node.js, PostgreSQL, Supabase'],
-  ['Web', 'WordPress, responsive UI, performance, technical SEO'],
-];
+const tech = ['OpenAI','Gemini','n8n','Python','FastAPI','Next.js','TypeScript','Supabase','PostgreSQL','RAG'];
 ---
-
-<Layout title="Ammar Bin Yasir — AI Automation Engineer" description="AI automation engineer building agents, intelligent workflows, LLM products, and modern web experiences.">
-  <a class="skip-link" href="#main-content">Skip to content</a>
-
-  <header class="topbar">
-    <a class="monogram" href="#main-content" aria-label="Ammar Bin Yasir, home">ABY<span>.</span></a>
-    <nav aria-label="Main navigation">
-      <a href="#services">Services</a>
-      <a href="#work">Work</a>
-      <a href="#about">About</a>
-    </nav>
-    <a class="nav-cta" href="#contact">Start a project <span aria-hidden="true">↗</span></a>
+<Layout title="Ammar Bin Yasir — AI Automation Engineer" description="AI Automation Engineer building AI agents, intelligent workflows, LLM applications, and production-ready full-stack AI systems.">
+  <a class="skip" href="#main">Skip to content</a>
+  <div id="boot"><b>ABY<span>/</span>SYS</b><div><i></i></div><small>INITIALIZING CORE <em id="count">000</em></small></div>
+  <div class="grain" aria-hidden="true"></div><div id="cursor" aria-hidden="true"></div><div id="project-cursor" aria-hidden="true">VIEW</div>
+  <header>
+    <a class="brand" href="#main"><b>A</b><span>AMMAR<br/>BIN YASIR</span></a>
+    <nav><a href="#projects">Projects</a><a href="#profile">Profile</a><a href="#stack">Stack</a></nav>
+    <a class="status" href="#contact"><i></i>Connection ready</a>
   </header>
-
-  <main id="main-content">
-    <section class="hero" aria-labelledby="hero-title">
+  <main id="main">
+    <section class="hero scene" data-scene="hero">
+      <span class="rail">01 / INITIALIZE</span>
       <div class="hero-copy">
-        <p class="eyebrow"><span></span> AI Automation Engineer · Available for select projects</p>
-        <h1 id="hero-title">I turn busywork into <em>intelligent systems.</em></h1>
-        <p class="intro">Hi, I’m Ammar—an AI engineer and full-stack developer building useful agents, reliable automations, and polished digital products for real business workflows.</p>
-        <div class="hero-actions">
-          <a class="primary-button" href="#work">Explore selected work <span aria-hidden="true">↓</span></a>
-          <a class="inline-link" href="https://github.com/AmmarBinYasir489" target="_blank" rel="noreferrer">GitHub profile <span aria-hidden="true">↗</span></a>
+        <p class="eyebrow"><i></i>AI ENGINEER · AUTOMATION SPECIALIST · SYSTEM ONLINE</p>
+        <h1><span>ENGINEERING</span><span class="outline">INTELLIGENT</span><span>SYSTEMS<em>.</em></span></h1>
+        <p class="intro">I’m Ammar Bin Yasir. I build AI agents, connected automations, and full-stack products that turn operational friction into clear, reliable systems.</p>
+        <div class="actions"><a class="cta" href="#projects">ENTER THE LAB <b>↓</b></a><a href="https://github.com/AmmarBinYasir489" target="_blank" rel="noreferrer">GITHUB / 489 ↗</a></div>
+      </div>
+      <div class="signal-composition" aria-hidden="true"><canvas id="flow-field"></canvas><span>AI</span><span>AUTOMATION</span><span>ENGINEERING</span><div><i></i><i></i><i></i><i></i><i></i></div><small>THREE.JS DATA FLOW / LIVE</small></div>
+      <aside><div>CORE_PROFILE.JSON <i></i></div><dl><dt>ROLE</dt><dd>AI ENGINEER</dd><dt>FOCUS</dt><dd>AGENTS · AUTOMATION</dd><dt>BUILD</dt><dd>LLM · FULL-STACK · API</dd><dt>STATUS</dt><dd class="red">AVAILABLE</dd></dl></aside>
+      <p class="scroll">SCROLL TO EXPLORE <i></i></p>
+    </section>
+
+    <div class="signal-strip" aria-label="Core disciplines"><span>AI AGENTS</span><i></i><span>WORKFLOW AUTOMATION</span><i></i><span>FULL-STACK PRODUCTS</span><i></i><span>API INTEGRATION</span><i></i><span>WEB · WORDPRESS · SEO</span></div>
+
+    <section class="manifesto scene" data-scene="manifesto">
+      <span class="rail">02 / SIGNAL</span><h2>NOT MORE SOFTWARE.</h2><h2 class="outline">BETTER SYSTEMS.</h2>
+      <p>AI AGENTS <i></i> WORKFLOW AUTOMATION <i></i> FULL-STACK AI</p>
+    </section>
+
+    <section id="projects" class="projects scene" data-scene="projects">
+      <div class="section-head"><span class="rail">03 / PROJECT SPACE</span><div><p class="eyebrow"><i></i>SELECTED BUILDS</p><h2>PROOF IN<br/><em>MOTION.</em></h2></div><p>Five production-minded builds presented as a spatial evidence wall—idea, operating flow, and engineering layer in one view.</p></div>
+      <div class="project-space">
+        <nav class="project-dock" aria-label="Project index"><small>QUICK ACCESS</small>{projects.map((p,i)=><a href={`#project-${i+1}`}><b>{p[0]}</b><span>{p[1]}</span></a>)}</nav>
+        <div class="deck">
+          {projects.map((p,i)=><article class="project" data-project={i} id={`project-${i+1}`}>
+            <div class="project-top"><span>PROJECT {p[0]} / 05</span><span>{p[6]}</span><span>{p[5] ? 'GITHUB LINKED' : 'CASE STUDY'}</span></div>
+            <div class="project-body">
+              <div class="visual"><img src={p[7]} width="1536" height="864" loading="lazy" alt={`${p[1]} interface concept`}/><span class="image-scan"></span><small>{p[4]}</small></div>
+              <div class="project-copy"><p class="eyebrow"><i></i>{p[6]}</p><h3>{p[1]}</h3><p>{p[2]}</p><small>{p[3]}</small>{p[5] ? <a href={p[5]} target="_blank" rel="noreferrer">VIEW ON GITHUB <b>↗</b></a> : <button class="detail-trigger" data-dialog="recruiter-detail">VIEW CASE STUDY <b>＋</b></button>}</div>
+            </div>
+            {p[5] ? <a class="project-hit" href={p[5]} target="_blank" rel="noreferrer" aria-label={`Open ${p[1]} on GitHub`}></a> : <button class="project-hit detail-trigger" data-dialog="recruiter-detail" aria-label="Open Recruiter Portal case study"></button>}
+          </article>)}
         </div>
       </div>
-
-      <figure class="portrait-frame">
-        <div class="portrait-orbit" aria-hidden="true"></div>
-        <div class="portrait-grid" aria-hidden="true"></div>
-        <img src="/ammar-portrait-cutout.png" width="768" height="1365" alt="Portrait of Ammar Bin Yasir" fetchpriority="high" />
-        <figcaption><span>Ammar Bin Yasir</span><span>AI · Automation · Web</span></figcaption>
-      </figure>
-
-      <aside class="workflow-card" aria-label="Typical automation workflow">
-        <p>Workflow / 001</p>
-        <ol>
-          <li><span>01</span> Business signal</li>
-          <li><span>02</span> AI decision</li>
-          <li><span>03</span> Automated action</li>
-        </ol>
-        <div class="workflow-status"><i></i> System connected</div>
-      </aside>
     </section>
 
-    <section class="positioning" aria-label="Professional focus">
-      <p>AI Agents</p><i></i><p>n8n Automation</p><i></i><p>Full-Stack AI</p><i></i><p>WordPress & SEO</p>
-    </section>
+    <dialog id="recruiter-detail" class="project-dialog" aria-labelledby="recruiter-title">
+      <button class="dialog-close" aria-label="Close project details">×</button>
+      <div class="dialog-media"><img src="/projects/recruiter-portal.png" width="1536" height="864" alt="Recruiter Portal interface concept"/></div>
+      <div class="dialog-copy"><p class="eyebrow"><i></i>PROJECT 05 · CASE STUDY</p><h2 id="recruiter-title">RECRUITER<br/><em>PORTAL.</em></h2><p>A full-stack recruitment workspace designed around the daily hiring workflow—from publishing roles to reviewing candidates and moving applicants through a clear pipeline.</p><ul><li>Role and job-post management</li><li>Applicant pipeline and status tracking</li><li>Resume review and candidate comparison</li><li>Shortlisting workflow and hiring analytics</li><li>Responsive recruiter dashboard</li></ul><small>Repository link will appear here when the project is published on GitHub.</small></div>
+    </dialog>
 
-    <section id="services" class="services section-shell">
-      <div class="section-label"><span>01</span><span>What I build</span></div>
-      <div class="section-intro">
-        <h2>Useful systems,<br /><em>end to end.</em></h2>
-        <p>Businesses don’t need more disconnected software. They need thoughtfully connected tools that remove manual work, improve decisions, and scale with the operation.</p>
-      </div>
-      <div class="capability-grid">
-        {capabilities.map((item) => (
-          <article class="capability">
-            <div class="capability-index">{item.index}</div>
-            <h3>{item.title}</h3>
-            <p>{item.copy}</p>
-            <small>{item.tools}</small>
-          </article>
-        ))}
+    <section id="profile" class="profile scene" data-scene="profile">
+      <div class="section-head compact"><span class="rail">04 / OPERATOR</span><div><p class="eyebrow"><i></i>PROFILE</p><h2>ENGINEER.<br/><em>BUILDER.</em><br/>SYSTEMS THINKER.</h2></div></div>
+      <div class="profile-grid">
+        <figure><div class="corners"></div><img src="/ammar-portrait-cutout.png" width="768" height="1365" alt="Portrait of Ammar Bin Yasir"/><figcaption><span>SUBJECT / AMMAR</span><span>IDENTITY VERIFIED</span></figcaption></figure>
+        <div class="bio"><p>I work across the complete product journey—from mapping an operational problem to engineering the AI layer, interface, integrations, and deployment.</p><p>My profile is intentionally broader than one AI pattern: agents, automations, APIs, full-stack products, web development, WordPress, and technical SEO where the product needs them.</p><div class="profile-signals"><span><b>AI</b>ENGINEERING</span><span><b>API</b>INTEGRATION</span><span><b>WEB</b>PRODUCTS</span></div><dl><dt>DISCIPLINE</dt><dd>AI ENGINEERING</dd><dt>MODE</dt><dd>BUILD → TEST → REFINE</dd><dt>LOCATION</dt><dd>PAKISTAN / REMOTE</dd></dl></div>
       </div>
     </section>
 
-    <section id="work" class="work section-shell">
-      <div class="section-label"><span>02</span><span>Selected work</span></div>
-      <div class="work-header">
-        <h2>Range, with a<br /><em>clear purpose.</em></h2>
-        <p>From research agents to consumer products—each project explores a different way AI can make an experience more capable and more useful.</p>
-      </div>
-      <div class="project-list">
-        {projects.map((project) => (
-          <a class="project" href={project.href} target="_blank" rel="noreferrer">
-            <span class="project-number">{project.number}</span>
-            <div class="project-main"><p>{project.type}</p><h3>{project.title}</h3></div>
-            <p class="project-description">{project.description}</p>
-            <div class="project-stack">{project.stack.map((item) => <span>{item}</span>)}</div>
-            <span class="project-arrow" aria-hidden="true">↗</span>
-          </a>
-        ))}
-      </div>
+    <section id="stack" class="stack scene" data-scene="stack">
+      <div><span class="rail">05 / CONSTELLATION</span><p class="eyebrow"><i></i>TECHNOLOGY FIELD</p><h2>TOOLS THAT<br/><em>CONNECT.</em></h2><p>The stack changes with the system. The constant is the connection between intelligence, automation, interface, and infrastructure.</p></div>
+      <div class="constellation"><svg viewBox="0 0 1000 700" preserveAspectRatio="none"><path d="M500 350L100 100M500 350L720 70M500 350L450 180M500 350L170 340M500 350L790 300M500 350L380 520M500 350L700 550M500 350L110 590M500 350L850 620M500 350L510 650"/></svg><b>ABY<i></i></b>{tech.map((t,i)=><span style={`--i:${i}`}>{t}<i></i></span>)}</div>
     </section>
 
-    <section id="about" class="about section-shell">
-      <div class="section-label"><span>03</span><span>Profile</span></div>
-      <div class="about-grid">
-        <div>
-          <p class="kicker">ENGINEERING + PRODUCT THINKING</p>
-          <h2>Technical depth.<br /><em>Business clarity.</em></h2>
-        </div>
-        <div class="about-copy">
-          <p class="lead">I work across the full product journey—from understanding a workflow and designing the automation, to building the AI layer, interface, API connections, and deployment.</p>
-          <p>My focus is practical delivery: secure systems, maintainable workflows, clear user experiences, and technology chosen for the problem—not for the trend.</p>
-        </div>
-      </div>
-      <div class="stack-list">
-        {stack.map(([group, items]) => <div><strong>{group}</strong><span>{items}</span></div>)}
-      </div>
+    <section class="process scene" data-scene="process">
+      <div class="section-head compact"><span class="rail">06 / PROTOCOL</span><div><p class="eyebrow"><i></i>ENGINEERING PROCESS</p><h2>FROM FRICTION<br/>TO <em>FLOW.</em></h2></div></div>
+      <ol>{[['01','DISCOVER','Map the real workflow'],['02','ARCHITECT','Design the useful system'],['03','ENGINEER','Build and connect'],['04','EVOLVE','Measure and refine']].map(s=><li><span>{s[0]}</span><i></i><small>{s[1]}</small><h3>{s[2]}</h3><p>Turn ambiguity into a reliable, observable system designed for real use.</p></li>)}</ol>
     </section>
 
-    <section class="approach section-shell" aria-labelledby="approach-title">
-      <div class="section-label"><span>04</span><span>How I work</span></div>
-      <div class="approach-grid">
-        <h2 id="approach-title">From friction<br />to <em>flow.</em></h2>
-        <ol>
-          <li><span>01</span><div><h3>Map the real workflow</h3><p>Find the repetitive steps, decision points, systems, and outcomes that matter.</p></div></li>
-          <li><span>02</span><div><h3>Design the smallest useful system</h3><p>Choose the right automation, AI model, interface, and safeguards for the job.</p></div></li>
-          <li><span>03</span><div><h3>Build, connect, improve</h3><p>Ship a maintainable solution, integrate it cleanly, and refine it with real use.</p></div></li>
-        </ol>
-      </div>
-    </section>
-
-    <section id="contact" class="contact">
-      <div class="contact-inner">
-        <p class="eyebrow"><span></span> Have a workflow worth improving?</p>
-        <h2>Let’s build something<br /><em>genuinely useful.</em></h2>
-        <p>AI agents, business automation, custom applications, or a stronger web presence—bring the problem, and we’ll shape the right system around it.</p>
-        <a href="https://github.com/AmmarBinYasir489" target="_blank" rel="noreferrer">Start on GitHub <span aria-hidden="true">↗</span></a>
-      </div>
-    </section>
+    <section id="contact" class="contact scene" data-scene="contact"><div class="rings"><i></i><i></i><i></i></div><div><p class="eyebrow"><i></i>CONNECTION READY</p><h2>LET’S BUILD<br/>WHAT’S <em>NEXT.</em></h2><p>Interested in AI agents, intelligent automation, production AI products, or open-source collaboration?</p><a class="cta light" href="https://github.com/AmmarBinYasir489" target="_blank" rel="noreferrer">CONNECT ON GITHUB <b>↗</b></a></div></section>
   </main>
-
-  <footer>
-    <span>© {new Date().getFullYear()} Ammar Bin Yasir</span>
-    <span>AI Engineer · Automation · Web</span>
-    <a href="#main-content">Back to top ↑</a>
-  </footer>
+  <footer><span>© {new Date().getFullYear()} AMMAR BIN YASIR</span><span>AI AUTOMATION ENGINEER</span><a href="#main">RETURN TO CORE ↑</a></footer>
+  <script>import('../scripts/motion').then(({ initMotion }) => initMotion());</script>
 </Layout>
-
-<style>
-  :global(html) { background:#dce9e9; color-scheme:light; scroll-behavior:smooth; }
-  :global(body) { margin:0; color:#173247; background:linear-gradient(130deg,#dce9e9 0%,#cadde1 47%,#eddbc5 100%); font-family:'Source Serif 4',Georgia,serif; overflow-x:hidden; }
-  :global(*) { box-sizing:border-box; }
-  :global(a:focus-visible) { outline:3px solid #e75f4e; outline-offset:5px; }
-  :global(#services), :global(#work), :global(#about), :global(#contact) { scroll-margin-top:90px; }
-  .skip-link { position:absolute; top:-60px; left:18px; z-index:50; padding:12px 16px; color:white; background:#173247; }
-  .skip-link:focus { top:16px; }
-
-  .topbar { position:relative; z-index:20; height:82px; max-width:1400px; margin:auto; padding:0 36px; display:flex; align-items:center; justify-content:space-between; border-bottom:1px solid rgba(23,50,71,.2); }
-  .topbar a { color:inherit; text-decoration:none; }
-  .monogram { font-family:'DM Serif Display',Georgia,serif; font-size:25px; letter-spacing:-.06em; }
-  .monogram span { color:#e75f4e; }
-  .topbar nav { display:flex; gap:34px; }
-  .topbar nav a, .nav-cta { font-family:Inter,sans-serif; font-size:11px; text-transform:uppercase; letter-spacing:.11em; }
-  .topbar nav a { color:#456170; }
-  .topbar nav a:hover { color:#e75f4e; }
-  .nav-cta { padding:10px 0; border-bottom:1px solid #173247; }
-  .nav-cta span { margin-inline-start:8px; color:#e75f4e; }
-
-  .hero { max-width:1400px; min-height:760px; margin:auto; padding:72px 36px 0; display:grid; grid-template-columns:1.15fr .75fr .42fr; gap:34px; align-items:end; position:relative; }
-  .hero:before { content:''; position:absolute; width:430px; height:430px; border:1px solid rgba(31,91,112,.25); border-radius:50%; left:18%; top:62px; pointer-events:none; }
-  .hero-copy { align-self:center; padding-bottom:34px; position:relative; z-index:2; }
-  .eyebrow { display:flex; align-items:center; gap:10px; margin:0; color:#426170; font-family:Inter,sans-serif; font-size:10px; font-weight:600; letter-spacing:.11em; text-transform:uppercase; }
-  .eyebrow span { width:7px; height:7px; border-radius:50%; background:#e75f4e; box-shadow:0 0 0 5px rgba(231,95,78,.13); }
-  h1, h2 { font-family:'DM Serif Display',Georgia,serif; font-weight:400; letter-spacing:-.055em; }
-  .hero h1 { max-width:720px; margin:30px 0 28px; font-size:clamp(58px,6.8vw,106px); line-height:.89; }
-  h1 em, h2 em { color:#e75f4e; font-weight:400; }
-  .intro { max-width:610px; margin:0; color:#3c5868; font-size:18px; line-height:1.65; }
-  .hero-actions { display:flex; align-items:center; gap:26px; margin-top:36px; }
-  .primary-button { display:inline-flex; align-items:center; gap:20px; padding:15px 19px; border-radius:999px; color:#f8f4ed; background:#173247; text-decoration:none; font-family:Inter,sans-serif; font-size:12px; }
-  .primary-button:hover { background:#e75f4e; }
-  .inline-link { color:#173247; border-bottom:1px solid #e75f4e; padding-bottom:4px; text-decoration:none; font-family:Inter,sans-serif; font-size:12px; }
-  .inline-link span { margin-inline-start:8px; }
-  .portrait-frame { height:650px; margin:0; position:relative; overflow:hidden; isolation:isolate; border-radius:210px 210px 16px 16px; background:linear-gradient(155deg,#6e9fb1,#dce9df 55%,#f2b68f); }
-  .portrait-frame:after { content:''; position:absolute; inset:0; z-index:5; border:1px solid rgba(23,50,71,.15); border-radius:inherit; pointer-events:none; }
-  .portrait-frame img { width:100%; height:100%; object-fit:contain; object-position:center bottom; filter:grayscale(1) contrast(1.09); transform:scale(1.09); transform-origin:center bottom; position:relative; z-index:3; }
-  .portrait-orbit { position:absolute; width:300px; aspect-ratio:1; border-radius:50%; top:70px; left:50%; transform:translateX(-50%); z-index:1; background:#f4c260; box-shadow:0 0 0 23px rgba(244,194,96,.18),0 0 0 46px rgba(244,194,96,.09); }
-  .portrait-grid { position:absolute; inset:0; z-index:2; opacity:.7; background:linear-gradient(rgba(255,255,255,.25) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.25) 1px,transparent 1px); background-size:31px 31px; mask-image:linear-gradient(to bottom,black,transparent 72%); }
-  .portrait-frame figcaption { position:absolute; inset:auto 0 0; z-index:4; display:flex; justify-content:space-between; padding:28px 16px 14px; color:white; background:linear-gradient(transparent,rgba(17,53,67,.72)); font-family:Inter,sans-serif; font-size:9px; letter-spacing:.11em; text-transform:uppercase; }
-  .workflow-card { align-self:center; margin-bottom:22px; padding:20px 18px; border:1px solid rgba(23,50,71,.19); background:rgba(255,255,255,.25); backdrop-filter:blur(10px); }
-  .workflow-card > p { margin:0 0 22px; font-family:Inter,sans-serif; font-size:9px; letter-spacing:.11em; text-transform:uppercase; color:#607783; }
-  .workflow-card ol { list-style:none; padding:0; margin:0; }
-  .workflow-card li { position:relative; display:flex; align-items:center; gap:10px; padding:11px 0; border-bottom:1px solid rgba(23,50,71,.12); font-size:12px; }
-  .workflow-card li:not(:last-child):after { content:''; position:absolute; left:9px; bottom:-8px; height:15px; border-left:1px dashed #e75f4e; }
-  .workflow-card li span { display:grid; place-items:center; width:20px; height:20px; border-radius:50%; color:white; background:#173247; font-family:Inter,sans-serif; font-size:8px; }
-  .workflow-status { margin-top:18px; display:flex; align-items:center; gap:8px; color:#426170; font-family:Inter,sans-serif; font-size:9px; text-transform:uppercase; letter-spacing:.08em; }
-  .workflow-status i { width:7px; height:7px; border-radius:50%; background:#4d9564; animation:pulse 2s infinite; }
-  @keyframes pulse { 50% { box-shadow:0 0 0 6px rgba(77,149,100,0); } 0%,100% { box-shadow:0 0 0 0 rgba(77,149,100,.3); } }
-
-  .positioning { max-width:1400px; margin:auto; padding:26px 36px; display:flex; align-items:center; justify-content:space-between; gap:20px; border-block:1px solid rgba(23,50,71,.2); background:rgba(255,255,255,.16); }
-  .positioning p { margin:0; font-family:Inter,sans-serif; font-size:10px; font-weight:600; letter-spacing:.12em; text-transform:uppercase; }
-  .positioning i { width:5px; height:5px; border-radius:50%; background:#e75f4e; }
-  .section-shell { max-width:1400px; margin:auto; padding:135px 36px; }
-  .section-label { display:flex; gap:20px; padding-top:13px; border-top:1px solid rgba(23,50,71,.2); color:#456170; font-family:Inter,sans-serif; font-size:10px; letter-spacing:.11em; text-transform:uppercase; }
-  .section-label span:first-child { color:#e75f4e; }
-  .section-intro, .work-header { display:grid; grid-template-columns:1.25fr .55fr; gap:70px; align-items:end; margin:48px 0 70px 14%; }
-  .section-intro h2, .work-header h2, .about h2, .approach h2 { margin:0; font-size:clamp(51px,5.6vw,85px); line-height:.92; }
-  .section-intro > p, .work-header > p { max-width:370px; margin:0; color:#3e5968; font-size:16px; line-height:1.7; }
-  .capability-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
-  .capability { min-height:330px; padding:24px; display:flex; flex-direction:column; border:1px solid rgba(23,50,71,.18); background:rgba(255,255,255,.23); transition:transform .25s,background .25s; }
-  .capability:hover { transform:translateY(-5px); background:rgba(255,255,255,.42); }
-  .capability-index { width:35px; height:35px; display:grid; place-items:center; border:1px solid rgba(23,50,71,.25); border-radius:50%; color:#e75f4e; font-family:Inter,sans-serif; font-size:10px; }
-  .capability h3 { margin:50px 0 15px; font-family:'DM Serif Display',Georgia,serif; font-size:31px; font-weight:400; letter-spacing:-.035em; }
-  .capability p { max-width:380px; margin:0; color:#456170; font-size:15px; line-height:1.65; }
-  .capability small { margin-top:auto; color:#5c7480; font-family:Inter,sans-serif; font-size:9px; letter-spacing:.08em; text-transform:uppercase; }
-  .work { padding-top:35px; }
-  .project-list { border-top:1px solid rgba(23,50,71,.2); }
-  .project { min-height:144px; display:grid; grid-template-columns:55px 1.1fr 1.2fr .9fr 25px; gap:24px; align-items:center; padding:24px 0; border-bottom:1px solid rgba(23,50,71,.2); color:inherit; text-decoration:none; transition:padding .25s,background .25s; }
-  .project:hover { padding-inline:16px; background:rgba(255,255,255,.38); }
-  .project-number, .project-main > p { color:#5d7682; font-family:Inter,sans-serif; font-size:9px; letter-spacing:.1em; text-transform:uppercase; }
-  .project-main > p { margin:0 0 9px; color:#e75f4e; }
-  .project h3 { margin:0; font-family:'DM Serif Display',Georgia,serif; font-size:28px; font-weight:400; letter-spacing:-.035em; }
-  .project-description { margin:0; color:#405d6c; font-size:14px; line-height:1.55; }
-  .project-stack { display:flex; flex-wrap:wrap; gap:6px; }
-  .project-stack span { padding:6px 8px; border:1px solid rgba(23,50,71,.18); border-radius:999px; color:#496672; font-family:Inter,sans-serif; font-size:8px; text-transform:uppercase; letter-spacing:.07em; }
-  .project-arrow { color:#e75f4e; font-size:22px; }
-  .about { padding-top:45px; }
-  .about-grid { display:grid; grid-template-columns:1fr .65fr; gap:100px; margin:54px 0 80px 14%; }
-  .kicker { margin:0 0 25px; color:#e75f4e; font-family:Inter,sans-serif; font-size:9px; letter-spacing:.11em; }
-  .about-copy { padding-top:43px; }
-  .about-copy p { margin:0 0 24px; color:#405c6b; font-size:16px; line-height:1.72; }
-  .about-copy .lead { color:#173247; font-size:20px; }
-  .stack-list { border-top:1px solid rgba(23,50,71,.2); }
-  .stack-list > div { display:grid; grid-template-columns:23% 1fr; gap:30px; padding:17px 0; border-bottom:1px solid rgba(23,50,71,.2); }
-  .stack-list strong { color:#e75f4e; font-family:Inter,sans-serif; font-size:10px; letter-spacing:.09em; text-transform:uppercase; }
-  .stack-list span { color:#3e5968; font-size:15px; }
-  .approach { padding-top:35px; }
-  .approach-grid { display:grid; grid-template-columns:.8fr 1fr; gap:100px; margin:55px 0 0 14%; }
-  .approach ol { margin:0; padding:0; list-style:none; border-top:1px solid rgba(23,50,71,.2); }
-  .approach li { display:grid; grid-template-columns:40px 1fr; gap:20px; padding:24px 0; border-bottom:1px solid rgba(23,50,71,.2); }
-  .approach li > span { color:#e75f4e; font-family:Inter,sans-serif; font-size:9px; }
-  .approach h3 { margin:0 0 7px; font-family:'DM Serif Display',Georgia,serif; font-size:24px; font-weight:400; }
-  .approach li p { margin:0; color:#456170; font-size:14px; line-height:1.55; }
-  .contact { margin-top:30px; padding:125px max(36px,calc((100vw - 1328px)/2)); color:#f4f1e9; background:#173247; background-image:radial-gradient(circle at 82% 22%,#e75f4e 0 5%,transparent 24%),radial-gradient(circle at 91% 82%,#f4c260 0 4%,transparent 19%); }
-  .contact-inner { max-width:950px; }
-  .contact .eyebrow { color:#bdccd1; }
-  .contact h2 { margin:30px 0; font-size:clamp(57px,6.6vw,100px); line-height:.9; }
-  .contact h2 em { color:#f4c260; }
-  .contact-inner > p:not(.eyebrow) { max-width:650px; color:#bdccd1; font-size:17px; line-height:1.7; }
-  .contact a { display:inline-flex; gap:22px; margin-top:25px; padding:14px 19px; border-radius:999px; color:#173247; background:#f4f1e9; text-decoration:none; font-family:Inter,sans-serif; font-size:12px; }
-  .contact a:hover { background:#f4c260; }
-  footer { max-width:1400px; margin:auto; padding:25px 36px; display:flex; justify-content:space-between; color:#526d79; font-family:Inter,sans-serif; font-size:9px; letter-spacing:.09em; text-transform:uppercase; }
-  footer a { color:inherit; text-decoration:none; }
-
-  @media (max-width:1050px) {
-    .hero { grid-template-columns:1fr .72fr; }
-    .workflow-card { display:none; }
-    .hero-copy { padding-bottom:70px; }
-    .project { grid-template-columns:45px 1fr 1.2fr 25px; }
-    .project-stack { display:none; }
-  }
-  @media (max-width:760px) {
-    .topbar { height:70px; padding:0 20px; }
-    .topbar nav { display:none; }
-    .nav-cta { font-size:9px; }
-    .hero { display:flex; flex-direction:column; min-height:0; padding:64px 20px 0; gap:45px; align-items:stretch; }
-    .hero:before { width:280px; height:280px; left:-80px; top:80px; }
-    .hero-copy { padding:0; }
-    .hero h1 { margin-top:25px; font-size:clamp(55px,16vw,79px); }
-    .intro { font-size:16px; }
-    .hero-actions { align-items:flex-start; flex-direction:column; gap:18px; }
-    .portrait-frame { width:100%; max-width:520px; height:570px; align-self:center; }
-    .positioning { padding:23px 20px; overflow:hidden; justify-content:flex-start; }
-    .positioning p { min-width:max-content; }
-    .positioning p:nth-of-type(4), .positioning i:nth-of-type(3) { display:none; }
-    .section-shell { padding:92px 20px; }
-    .section-intro, .work-header, .about-grid, .approach-grid { display:block; margin:40px 0 50px; }
-    .section-intro > p, .work-header > p { margin-top:25px; }
-    .capability-grid { grid-template-columns:1fr; }
-    .capability { min-height:285px; }
-    .work, .about, .approach { padding-top:20px; }
-    .project { grid-template-columns:32px 1fr 24px; gap:14px; min-height:0; }
-    .project-description { grid-column:2/4; }
-    .project h3 { font-size:24px; }
-    .about-copy { padding-top:32px; }
-    .stack-list > div { grid-template-columns:1fr; gap:8px; }
-    .approach ol { margin-top:42px; }
-    .contact { margin-top:0; padding:90px 20px; }
-    footer { padding:22px 20px; gap:14px; flex-wrap:wrap; }
-    footer span:nth-child(2) { display:none; }
-  }
-  @media (prefers-reduced-motion:reduce) {
-    :global(html) { scroll-behavior:auto; }
-    .workflow-status i { animation:none; }
-    .capability, .project { transition:none; }
-  }
-</style>
