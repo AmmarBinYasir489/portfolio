@@ -1,0 +1,106 @@
+---
+import Layout from '../layouts/Layout.astro';
+const projects = [
+  ['01','AI Research Assistant','Agentic research that discovers sources, evaluates evidence, and produces cited summaries.','Python · FastAPI · Ollama · Gemini','SOURCE → EVALUATE → SYNTHESIZE','https://github.com/AmmarBinYasir489/ai-research-assistant','RESEARCH AGENT','/projects/research-assistant.png'],
+  ['02','Nourish AI','A multimodal nutrition companion that understands meal images and creates reusable food templates.','Next.js · Supabase · Gemini Vision','VISION → ANALYZE → TRACK','https://github.com/AmmarBinYasir489/calories-counter','MULTIMODAL PRODUCT','/projects/nourish-ai.png'],
+  ['03','Expense AI','Natural-language expense capture, financial analytics, and conversational insight in one product.','Next.js · TypeScript · Supabase','CAPTURE → CLASSIFY → INSIGHT','https://github.com/AmmarBinYasir489/expense-ai','FINANCE PLATFORM','/projects/expense-ai.png'],
+  ['04','Grounded Workspace','A private document environment for source-aware answers across internal knowledge.','TypeScript · RAG · AI Search','INGEST → RETRIEVE → ANSWER','https://github.com/AmmarBinYasir489/grounded-knowledge-workspace','KNOWLEDGE SYSTEM','/projects/grounded-workspace.png'],
+  ['05','Recruiter Portal','A recruiter-facing hiring workspace for managing openings, reviewing resumes, tracking applicants, comparing candidates, and monitoring pipeline performance.','Full-Stack · Role-Based UI · Hiring Analytics','POST → REVIEW → SHORTLIST → HIRE','','RECRUITMENT PLATFORM','/projects/recruiter-portal.png'],
+  ['06','CodeRecall','An evidence-backed developer memory engine that maps Git repositories, recovers unfinished work, and answers codebase questions with file and line citations.','Next.js · FastAPI · Python · SQLite · Gemini','CONNECT → INDEX → REMEMBER → ANSWER','https://github.com/AmmarBinYasir489/coderecall','DEVELOPER INTELLIGENCE','/projects/code-recall.png'],
+  ['07','AI Stylist','A private wardrobe workspace that classifies garments, analyzes exact colors, scores compatible outfits, and previews complete looks on a mannequin.','React · TypeScript · Supabase · Vision AI','CAPTURE → CLASSIFY → COMBINE → STYLE','https://github.com/AmmarBinYasir489/ai-stylist','VISION PRODUCT','/projects/ai-stylist.png'],
+  ['08','Hashim Tech Agency','A conversion-focused technology agency website with tactile interface design, strong information hierarchy, and intentional motion throughout.','Next.js · TypeScript · Tailwind · Framer Motion','POSITION → ENGAGE → CONVERT','https://github.com/AmmarBinYasir489/hashim-tech-agency','WEB EXPERIENCE','/projects/hashim-tech-agency.png'],
+];
+const tech = [['OpenAI','MODEL'],['Gemini','MODEL'],['n8n','AUTOMATION'],['Python','ENGINEERING'],['FastAPI','ENGINEERING'],['Next.js','PRODUCT'],['TypeScript','PRODUCT'],['Supabase','DATA'],['PostgreSQL','DATA'],['RAG','INTELLIGENCE']];
+---
+<Layout title="Ammar Bin Yasir — AI Automation Engineer" description="AI Automation Engineer building AI agents, intelligent workflows, LLM applications, and production-ready full-stack AI systems.">
+  <a class="skip" href="#main">Skip to content</a>
+  <div id="boot"><b>AMMAR<span>.</span>DEV</b><div><i></i></div><small>LOADING THE CURRENT <em id="count">000</em></small></div>
+  <canvas id="ambient-world" aria-hidden="true"></canvas>
+  <div class="grain" aria-hidden="true"></div><div id="cursor" aria-hidden="true"></div><div id="project-cursor" aria-hidden="true">VIEW</div>
+  <div class="spatial-progress" aria-hidden="true"><span id="scene-index">01</span><i><b id="scene-progress"></b></i><small>07</small></div>
+  <header>
+    <a class="brand" href="#main"><b>AB</b><span>AMMAR<br/>BIN YASIR</span></a>
+    <nav class="desktop-nav" aria-label="Primary navigation"><a href="#projects">Projects</a><a href="#profile">Profile</a><a href="#stack">Stack</a><a href="#contact">Contact</a></nav>
+    <a class="status" href="#contact"><i></i>Available for projects</a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu"><span>Menu</span><i></i><i></i></button>
+  </header>
+  <div id="mobile-menu" class="mobile-menu" aria-hidden="true">
+    <nav aria-label="Mobile navigation"><a href="#projects"><small>01</small>Projects</a><a href="#profile"><small>02</small>Profile</a><a href="#stack"><small>03</small>Stack</a><a href="#contact"><small>04</small>Contact</a></nav>
+    <p>AI ENGINEERING · AUTOMATION · FULL-STACK PRODUCTS</p>
+  </div>
+  <main id="main">
+    <section class="hero scene" data-scene="hero">
+      <span class="rail">01 / INITIALIZE</span>
+      <div class="hero-copy">
+        <p class="eyebrow"><i></i>AI ENGINEER · AUTOMATION BUILDER · PAKISTAN / REMOTE</p>
+        <h1><span>I BUILD SYSTEMS</span><span class="outline">THAT THINK,</span><span>FLOW &amp; SHIP<em>.</em></span></h1>
+        <p class="intro">I’m Ammar Bin Yasir—an AI automation engineer turning messy operations into intelligent agents, connected workflows, and full-stack products people can actually use.</p>
+        <div class="actions"><a class="cta" href="#projects">EXPLORE MY WORK <b>↓</b></a><a href="https://github.com/AmmarBinYasir489" target="_blank" rel="noreferrer">GITHUB / 489 ↗</a></div>
+      </div>
+      <div class="signal-composition" aria-hidden="true">
+        <canvas id="flow-field"></canvas>
+        <div class="core-hud core-hud-a"><b>NEURAL CORE</b><span>128 ACTIVE NODES</span></div>
+        <div class="core-hud core-hud-b"><b>AGENT LAYER</b><span>REASON · ACT · REFINE</span></div>
+        <div class="core-reticle"><i></i><i></i><i></i><i></i></div>
+        <div class="depth-word depth-word-a">INTELLIGENCE</div>
+        <div class="depth-word depth-word-b">AUTOMATION</div>
+        <small>THREE.JS SPATIAL ENGINE / INTERACTIVE</small>
+      </div>
+      <aside><div>NOW_BUILDING.JSON <i></i></div><dl><dt>ROLE</dt><dd>AI AUTOMATION ENGINEER</dd><dt>FOCUS</dt><dd>AGENTS · WORKFLOWS</dd><dt>BUILD</dt><dd>LLM · FULL-STACK · API</dd><dt>STATUS</dt><dd class="red">OPEN TO WORK</dd></dl></aside>
+      <p class="scroll">SCROLL TO EXPLORE <i></i></p>
+    </section>
+
+    <div class="signal-strip" aria-label="Core disciplines"><span>AI AGENTS</span><i></i><span>WORKFLOW AUTOMATION</span><i></i><span>FULL-STACK PRODUCTS</span><i></i><span>API INTEGRATION</span><i></i><span>WEB · WORDPRESS · SEO</span></div>
+
+    <section class="manifesto scene" data-scene="manifesto">
+      <span class="rail">02 / POINT OF VIEW</span><h2>LESS BUSYWORK.</h2><h2 class="outline">MORE MOMENTUM.</h2>
+      <p>AI AGENTS <i></i> WORKFLOW AUTOMATION <i></i> FULL-STACK AI</p>
+    </section>
+
+    <section id="projects" class="projects scene" data-scene="projects">
+      <div class="section-head"><span class="rail">03 / SELECTED WORK</span><div><p class="eyebrow"><i></i>PROJECT LIBRARY · {String(projects.length).padStart(2,'0')} BUILDS</p><h2>BUILT TO<br/><em>MOVE.</em></h2></div><p>A selection of AI products, automation systems, and full-stack experiments—each designed around a real workflow, not a demo prompt.</p></div>
+      <div class="project-space">
+        <nav class="project-dock" aria-label="Project index"><small>QUICK ACCESS</small>{projects.map((p,i)=><a href={`#project-${i+1}`}><b>{p[0]}</b><span>{p[1]}</span></a>)}</nav>
+        <div class="deck">
+          {projects.map((p,i)=><article class="project" data-project={i} id={`project-${i+1}`} style={`--stack-index:${i};--stack-progress:${i / (projects.length - 1)}`}>
+            <span class="project-watermark" aria-hidden="true">{p[0]}</span>
+            <div class="project-top"><span>PROJECT {p[0]} / {String(projects.length).padStart(2,'0')}</span><span>{p[6]}</span><span>{p[5] ? 'GITHUB LINKED' : 'CASE STUDY'}</span></div>
+            <div class="project-body">
+              <div class="visual"><img src={p[7]} width="1536" height="864" loading="lazy" alt={`${p[1]} project preview`}/><span class="image-scan"></span><small>{p[4]}</small></div>
+              <div class="project-copy"><p class="eyebrow"><i></i>{p[6]}</p><h3>{p[1]}</h3><p>{p[2]}</p><small>{p[3]}</small>{p[5] ? <a href={p[5]} target="_blank" rel="noreferrer">VIEW ON GITHUB <b>↗</b></a> : <button class="detail-trigger" data-dialog="recruiter-detail">VIEW CASE STUDY <b>＋</b></button>}</div>
+            </div>
+            {p[5] ? <a class="project-hit" href={p[5]} target="_blank" rel="noreferrer" aria-label={`Open ${p[1]} on GitHub`}></a> : <button class="project-hit detail-trigger" data-dialog="recruiter-detail" aria-label="Open Recruiter Portal case study"></button>}
+          </article>)}
+        </div>
+      </div>
+    </section>
+
+    <dialog id="recruiter-detail" class="project-dialog" aria-labelledby="recruiter-title">
+      <button class="dialog-close" aria-label="Close project details">×</button>
+      <div class="dialog-media"><img src="/projects/recruiter-portal.png" width="1536" height="864" alt="Recruiter Portal interface concept"/></div>
+      <div class="dialog-copy"><p class="eyebrow"><i></i>PROJECT 05 · CASE STUDY</p><h2 id="recruiter-title">RECRUITER<br/><em>PORTAL.</em></h2><p>A full-stack recruitment workspace designed around the daily hiring workflow—from publishing roles to reviewing candidates and moving applicants through a clear pipeline.</p><ul><li>Role and job-post management</li><li>Applicant pipeline and status tracking</li><li>Resume review and candidate comparison</li><li>Shortlisting workflow and hiring analytics</li><li>Responsive recruiter dashboard</li></ul><small>Repository link will appear here when the project is published on GitHub.</small></div>
+    </dialog>
+
+    <section id="profile" class="profile scene" data-scene="profile">
+      <div class="section-head compact"><span class="rail">04 / ABOUT</span><div><p class="eyebrow"><i></i>BEHIND THE SYSTEMS</p><h2>ENGINEER.<br/><em>BUILDER.</em><br/>CURIOUS HUMAN.</h2></div></div>
+      <div class="profile-grid">
+        <figure class="tilt-surface" data-tilt><div class="portrait-depth" aria-hidden="true"><i></i><i></i><i></i></div><div class="corners"></div><img src="/ammar-portrait-cutout.png" width="768" height="1365" alt="Portrait of Ammar Bin Yasir"/><figcaption><span>SUBJECT / AMMAR</span><span>IDENTITY VERIFIED</span></figcaption></figure>
+        <div class="bio"><p>I work across the complete product journey—from mapping an operational problem to engineering the AI layer, interface, integrations, and deployment.</p><p>My profile is intentionally broader than one AI pattern: agents, automations, APIs, full-stack products, web development, WordPress, and technical SEO where the product needs them.</p><div class="profile-signals"><span><b>AI</b>ENGINEERING</span><span><b>API</b>INTEGRATION</span><span><b>WEB</b>PRODUCTS</span></div><dl><dt>DISCIPLINE</dt><dd>AI ENGINEERING</dd><dt>MODE</dt><dd>BUILD → TEST → REFINE</dd><dt>LOCATION</dt><dd>PAKISTAN / REMOTE</dd></dl></div>
+      </div>
+    </section>
+
+    <section id="stack" class="stack scene" data-scene="stack">
+      <div><span class="rail">05 / TOOLKIT</span><p class="eyebrow"><i></i>TECHNOLOGY FIELD</p><h2>TOOLS THAT<br/><em>CONNECT.</em></h2><p>I choose the stack around the job. The constant is a clean connection between intelligence, automation, interface, and infrastructure.</p><div class="stack-summary"><span><b>10</b>CONNECTED TOOLS</span><span><b>04</b>SYSTEM LAYERS</span></div></div>
+      <div class="constellation tilt-surface" data-tilt><div class="constellation-hud"><span><i></i>STACK NETWORK / LIVE</span><b>10 NODES · 04 LAYERS</b></div><div class="radar-sweep" aria-hidden="true"></div><div class="stack-orbits" aria-hidden="true"><i></i><i></i><i></i></div><svg viewBox="0 0 1000 700" preserveAspectRatio="none"><path d="M500 350L100 100M500 350L720 70M500 350L450 180M500 350L170 340M500 350L790 300M500 350L380 520M500 350L700 550M500 350L110 590M500 350L850 620M500 350L510 650"/></svg><b><span>ABY</span><small>SYSTEM CORE</small><i></i></b>{tech.map((t,i)=><span class="tech-node" data-type={t[1]} style={`--i:${i}`}><small>{String(i+1).padStart(2,'0')} / {t[1]}</small>{t[0]}<i></i></span>)}<div class="stack-legend"><span>MODEL</span><span>AUTOMATION</span><span>PRODUCT</span><span>DATA</span></div></div>
+    </section>
+
+    <section class="process scene" data-scene="process">
+      <div class="section-head compact"><span class="rail">06 / PROTOCOL</span><div><p class="eyebrow"><i></i>ENGINEERING PROCESS</p><h2>FROM FRICTION<br/>TO <em>FLOW.</em></h2></div></div>
+      <ol class="process-corridor">{[['01','DISCOVER','Map the real workflow'],['02','ARCHITECT','Design the useful system'],['03','ENGINEER','Build and connect'],['04','EVOLVE','Measure and refine']].map((s,i)=><li class="tilt-surface" data-tilt style={`--step:${i}`}><span>{s[0]}</span><i></i><small>{s[1]}</small><h3>{s[2]}</h3><p>Turn ambiguity into a reliable, observable system designed for real use.</p><b aria-hidden="true">{s[0]}</b></li>)}</ol>
+    </section>
+
+    <section id="contact" class="contact scene" data-scene="contact"><div class="contact-grid" aria-hidden="true"></div><div class="rings"><i></i><i></i><i></i></div><div class="contact-copy"><div class="contact-availability"><i></i><span>AVAILABLE FOR SELECT PROJECTS</span><b>PAKISTAN / REMOTE</b></div><p class="eyebrow"><i></i>HAVE A HARD PROBLEM?</p><h2><span>LET’S MAKE IT</span> <em>FLOW.</em></h2><p>If you’re building an AI product, untangling a workflow, or exploring an open-source collaboration, I’d like to hear about it.</p><div class="contact-actions"><a class="cta light magnetic" href="mailto:ammarbinyasir4899@gmail.com">EMAIL AMMAR <b>↗</b></a><a class="cta contact-phone magnetic" href="tel:+923404844291">CALL +92 340 4844291 <b>↗</b></a></div><div class="contact-links" aria-label="Contact links"><a href="mailto:ammarbinyasir4899@gmail.com"><small>EMAIL</small><span>ammarbinyasir4899@gmail.com</span></a><a href="tel:+923404844291"><small>PHONE</small><span>+92 340 4844291</span></a><a href="https://github.com/AmmarBinYasir489" target="_blank" rel="noreferrer"><small>GITHUB</small><span>@AmmarBinYasir489 ↗</span></a></div><small>OPEN CHANNELS / EMAIL · PHONE · GITHUB · REMOTE</small></div></section>
+  </main>
+  <footer><span>© {new Date().getFullYear()} AMMAR BIN YASIR</span><span>AI AUTOMATION ENGINEER</span><a href="#main">RETURN TO CORE ↑</a></footer>
+  <script>import('../scripts/motion').then(({ initMotion }) => initMotion());</script>
+</Layout>
