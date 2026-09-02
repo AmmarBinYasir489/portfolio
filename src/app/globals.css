@@ -239,8 +239,9 @@ footer a { text-decoration: none; }
   .hero { min-height: 100svh; height: 100svh; }
   .hero-grid { background-size: 50vw 50vw; }
   .hero-kicker { left: 20px; top: 92px; max-width: 80vw; font-size: 6px; }
-  .hero h1 { left: 20px; top: 20vh; width: 88vw; font-size: 11vw; line-height: .79; }
+  .hero h1 { left: 20px; top: 20vh; width: 88vw; font-size: clamp(40px, 12.5vw, 86px); line-height: .79; }
   .hero-line { position: relative; inset: auto; translate: none; font-size: 1em; }
+  .hero-line:nth-child(2) > span { color: var(--signal); }
   .core-shell { left: 82%; top: 49%; width: 112vw; height: 94vw; opacity: .48; }
   .hero-intro { left: 20px; bottom: 21vh; max-width: 37ch; font-size: 13px; }
   .hero-actions { left: 20px; right: auto; bottom: 12vh; align-items: flex-start; gap: 15px; }
@@ -250,9 +251,9 @@ footer a { text-decoration: none; }
 
   .point { min-height: 98svh; margin-top: -8vh; display: block; border-radius: 50% 50% 0 0 / 7vw 7vw 0 0; }
   .point .section-index { margin-bottom: 70px; }
-  .point h2 { font-size: clamp(44px, 12.5vw, 60px); }
+  .point h2 { font-size: clamp(32px, 10vw, 60px); }
   .point-line:nth-child(2) { margin-left: 0; }
-  .point-line:nth-child(3) { margin-left: 1vw; }
+  .point-line:nth-child(3) { margin-left: 0; }
   .point-copy { margin: 48px 0 0; font-size: 17px; }
 
   .work-head { min-height: 78svh; display: block; padding-bottom: 52px; }
@@ -276,9 +277,9 @@ footer a { text-decoration: none; }
   .about > .section-index { left: 20px; top: 100px; }
   .about-title { margin: 78px 0 0; position: relative; z-index: 3; }
   .about-title h2 { font-size: clamp(53px, 15vw, 72px); }
-  .portrait { left: 50%; top: 340px; width: 92vw; height: 690px; }
+  .portrait { left: 50%; top: 80px; width: 92vw; height: 690px; }
   .portrait figcaption { left: 0; right: 0; bottom: 20px; padding-inline: 12px; }
-  .about-copy { left: 20px; right: 20px; bottom: 80px; width: auto; }
+  .about-copy { left: 20px; right: 20px; top: 790px; bottom: auto; width: auto; }
   .about-copy > p:first-child { font-size: 23px; }
 
   .capabilities { min-height: 1380px; display: block; padding-top: 105px; }
@@ -315,10 +316,10 @@ footer a { text-decoration: none; }
 
 @media (max-width: 390px) {
   .identity span { display: none; }
-  .hero h1 { font-size: 10.6vw; letter-spacing: -.052em; }
+  .hero h1 { letter-spacing: -.052em; }
   .hero-kicker { font-size: 6px; }
   .hero-intro { font-size: 12.5px; }
-  h2, .point h2 { font-size: 14vw; }
+  h2 { font-size: 14vw; }
   .project-copy h3 { font-size: 12vw; }
 }
 
