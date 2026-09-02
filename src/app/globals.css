@@ -68,6 +68,7 @@ h2 em { color: var(--signal); font-style: normal; }
 .hero h1 { position: absolute; left: 4.5vw; top: 22vh; z-index: 5; width: 52vw; margin: 0; font-size: clamp(64px, 6.4vw, 112px); line-height: .78; pointer-events: none; transform-origin: left center; }
 .hero-line { position: relative; display: block; overflow: hidden; white-space: nowrap; }
 .hero-line > span { display: block; transform-origin: left bottom; }
+.hero-line:nth-child(2) > span { color: var(--signal); }
 .hero-line.stroke-line > span { color: transparent; -webkit-text-stroke: 1.6px rgba(238,236,229,.78); }
 .hero-line:last-child > span { color: var(--paper); }
 .hero-line:last-child > span::after { content: ''; display: inline-block; width: .12em; height: .12em; margin-left: .05em; background: var(--signal); }
@@ -99,7 +100,7 @@ h2 em { color: var(--signal); font-style: normal; }
 
 /* One full-screen project scene at a time; no card chrome. */
 .work { position: relative; z-index: 5; margin-top: -7vw; border-radius: 50% 50% 0 0 / 7vw 7vw 0 0; background: #080807; }
-.work-head { min-height: 92vh; display: grid; grid-template-columns: 12% minmax(0, 1fr) minmax(260px, .38fr); align-items: end; gap: 3vw; padding-bottom: 90px; }
+.work-head { min-height: 82vh; display: grid; grid-template-columns: 12% minmax(0, 1fr) minmax(260px, .38fr); align-items: end; gap: 3vw; padding-bottom: 60px; }
 .work-head > p:last-child { margin: 0 0 8px; color: var(--muted); line-height: 1.65; }
 .project-pin { height: 100svh; overflow: hidden; }
 .project-rail { height: 100%; display: flex; align-items: stretch; width: max-content; }
@@ -241,10 +242,9 @@ footer a { text-decoration: none; }
   .hero-kicker { left: 20px; top: 92px; max-width: 80vw; font-size: 6px; }
   .hero h1 { left: 20px; top: 20vh; width: 88vw; font-size: clamp(40px, 12.5vw, 86px); line-height: .79; }
   .hero-line { position: relative; inset: auto; translate: none; font-size: 1em; }
-  .hero-line:nth-child(2) > span { color: var(--signal); }
   .core-shell { left: 82%; top: 49%; width: 112vw; height: 94vw; opacity: .48; }
-  .hero-intro { left: 20px; bottom: 21vh; max-width: 37ch; font-size: 13px; }
-  .hero-actions { left: 20px; right: auto; bottom: 12vh; align-items: flex-start; gap: 15px; }
+  .hero-intro { left: 20px; top: 55vh; bottom: auto; max-width: 37ch; font-size: 13px; }
+  .hero-actions { left: 20px; right: auto; top: 70vh; bottom: auto; align-items: flex-start; gap: 15px; }
   .hero-actions .button { min-width: 205px; min-height: 48px; }
   .hero-meta { display: none; }
   .scroll-cue { display: none; }
@@ -256,9 +256,9 @@ footer a { text-decoration: none; }
   .point-line:nth-child(3) { margin-left: 0; }
   .point-copy { margin: 48px 0 0; font-size: 17px; }
 
-  .work-head { min-height: 78svh; display: block; padding-bottom: 52px; }
-  .work-head .section-index { margin-bottom: 65px; }
-  .work-head > p:last-child { max-width: 36ch; margin-top: 35px; }
+  .work-head { min-height: 0; display: block; padding-bottom: 40px; }
+  .work-head .section-index { margin-bottom: 45px; }
+  .work-head > p:last-child { max-width: 36ch; margin-top: 25px; }
   .project-pin { height: auto; overflow: visible; }
   .project-rail { width: auto; height: auto; display: grid; }
   .project-panel { width: 100%; height: 100svh; min-height: 760px; border-right: 0; border-bottom: 1px solid var(--line); }
@@ -277,9 +277,9 @@ footer a { text-decoration: none; }
   .about > .section-index { left: 20px; top: 100px; }
   .about-title { margin: 78px 0 0; position: relative; z-index: 3; }
   .about-title h2 { font-size: clamp(53px, 15vw, 72px); }
-  .portrait { left: 50%; top: 80px; width: 92vw; height: 690px; }
+  .portrait { left: 50%; top: 145px; width: 92vw; height: 690px; }
   .portrait figcaption { left: 0; right: 0; bottom: 20px; padding-inline: 12px; }
-  .about-copy { left: 20px; right: 20px; top: 790px; bottom: auto; width: auto; }
+  .about-copy { left: 20px; right: 20px; top: 855px; bottom: auto; width: auto; }
   .about-copy > p:first-child { font-size: 23px; }
 
   .capabilities { min-height: 1380px; display: block; padding-top: 105px; }
@@ -321,6 +321,10 @@ footer a { text-decoration: none; }
   .hero-intro { font-size: 12.5px; }
   h2 { font-size: 14vw; }
   .project-copy h3 { font-size: 12vw; }
+}
+
+@media (max-width: 340px) {
+  .about { min-height: 1400px; }
 }
 
 @media (hover: none) { .project-panel:hover .project-image { filter: saturate(.48) contrast(1.06) brightness(.8); } }
